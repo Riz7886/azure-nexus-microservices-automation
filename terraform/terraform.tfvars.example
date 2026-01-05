@@ -1,0 +1,26 @@
+# Azure Subscription Settings
+subscription_id = "your-subscription-id-here"
+tenant_id       = "your-tenant-id-here"
+
+# Environment Configuration
+environment = "prod"
+location    = "eastus"
+cost_center = "Engineering"
+
+# Network Configuration
+vnet_address_space = ["10.0.0.0/16"]
+
+# AKS Configuration
+aks_node_count     = 3
+aks_vm_size        = "Standard_D4s_v3"
+aks_max_pods       = 110
+aks_dns_service_ip = "10.0.200.10"
+aks_service_cidr   = "10.0.200.0/24"
+
+# SQL Configuration
+sql_admin_username = "sqladmin"
+sql_admin_password = "your-secure-password-here"
+
+# API Management Configuration
+apim_publisher_name  = "Nexus"
+apim_publisher_email = "admin@example.com"
