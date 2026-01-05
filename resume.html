@@ -3,68 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Rizvi - Azure Cloud Architect Resume</title>
+    <title>Syed Rizvi - Senior Azure Cloud Architect</title>
     <style>
         @media print {
             body { margin: 0; padding: 0; }
-            .page-break { page-break-before: always; }
+            .no-print { display: none; }
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #f5f7fa;
-            padding: 20px;
+            font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f0f0f0;
+            padding: 15px;
         }
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0066cc 0%, #003d7a 100%);
             color: white;
-            padding: 40px;
+            padding: 35px;
             text-align: center;
         }
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.8em;
+            margin-bottom: 8px;
             font-weight: 700;
+            letter-spacing: 1px;
         }
         .header h2 {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 400;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             opacity: 0.95;
         }
-        .contact-info {
+        .contact-bar {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 18px;
             font-size: 0.95em;
+            background: rgba(255,255,255,0.15);
+            padding: 12px;
+            border-radius: 5px;
+        }
+        .contact-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
         .section {
-            padding: 30px 40px;
-            border-bottom: 1px solid #e0e6ed;
+            padding: 25px 35px;
+            border-bottom: 1px solid #e5e5e5;
         }
+        .section:last-child { border-bottom: none; }
         .section-title {
-            font-size: 1.6em;
-            color: #667eea;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            font-size: 1.5em;
+            color: #0066cc;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #0066cc;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .summary-box {
+            background: linear-gradient(to right, #e6f2ff, #f0f8ff);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 5px solid #0066cc;
+            margin-bottom: 15px;
+        }
+        .summary-box p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .tag {
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85em;
             font-weight: 600;
         }
-        .achievement {
-            background: #fff7e6;
-            padding: 15px 20px;
-            border-radius: 6px;
+        .achievement-item {
+            background: linear-gradient(to right, #fff9e6, #fffbf0);
+            padding: 12px 15px 12px 45px;
+            border-radius: 5px;
             border-left: 4px solid #ffa500;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            position: relative;
+            font-size: 0.95em;
+        }
+        .achievement-item::before {
+            content: "🏆";
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            font-size: 1.4em;
+        }
+        .job {
+            margin-bottom: 25px;
+        }
+        .job-header {
+            background: linear-gradient(to right, #f5f5f5, #fafafa);
+            padding: 14px 18px;
+            border-radius: 5px;
+            margin-bottom: 12px;
+            border-left: 4px solid #0066cc;
+        }
+        .company {
+            font-size: 1.15em;
+            color: #0066cc;
+            font-weight: 700;
+        }
+        .job-title {
+            font-size: 1.05em;
+            color: #2c3e50;
+            font-weight: 600;
+            margin: 3px 0;
+        }
+        .job-duration {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        .subsection-title {
+            font-weight: 700;
+            color: #003d7a;
+            margin: 12px 0 8px 0;
+            font-size: 1.02em;
+        }
+        .job-highlights {
+            margin-left: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        .job-highlights li {
+            padding: 6px 0 6px 28px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 0.93em;
+        }
+        .job-highlights li::before {
+            content: "▶";
+            position: absolute;
+            left: 8px;
+            color: #0066cc;
+            font-size: 0.7em;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .skill-box {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 16px;
+            border-radius: 6px;
+            border-top: 3px solid #0066cc;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .skill-box h4 {
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 1em;
+            font-weight: 700;
+        }
+        .skill-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .skill-box li {
+            padding: 4px 0;
+            color: #444;
+            font-size: 0.88em;
+        }
+        .skill-box li::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 12px;
+        }
+        .cert-badge {
+            background: linear-gradient(135deg, #0066cc 0%, #003d7a 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+        .cert-title {
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        .cert-expiry {
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+        .education-box {
+            background: linear-gradient(to right, #e8f5e9, #f1f8f4);
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 5px solid #28a745;
+        }
+        .education-box h3 {
+            color: #2c3e50;
+            margin-bottom: 4px;
+            font-size: 1.1em;
+        }
+        .education-box p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.95em;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -73,16 +247,267 @@
         <div class="header">
             <h1>SYED RIZVI</h1>
             <h2>Senior Azure Cloud Architect | Kubernetes & Infrastructure Automation Expert</h2>
-            <div class="contact-info">
+            <div class="contact-bar">
                 <span>📍 Dallas, TX 75068</span>
                 <span>📱 845-554-8286</span>
                 <span>📧 ra4347534@gmail.com</span>
                 <span>🇺🇸 US Citizen</span>
             </div>
         </div>
+
         <div class="section">
-            <h3 class="section-title">PROFESSIONAL SUMMARY</h3>
-            <p>15+ years enterprise IT experience with 10+ years Microsoft Azure specialization...</p>
+            <h3 class="section-title">Professional Summary</h3>
+            <div class="summary-box">
+                <p>15+ years enterprise IT experience with 10+ years Microsoft Azure specialization. Expert in Infrastructure as Code, Kubernetes (AKS), and automated cloud migrations. Led teams of 20+ engineers, migrated 8,000+ VMs to Azure. Proven architect for Fortune 500 companies: TCS, CVS Health, Abbott, Disney ABC, Verizon, AIG.</p>
+                <div class="tags">
+                    <span class="tag">Azure Landing Zones</span>
+                    <span class="tag">AKS/Kubernetes</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">MFA/Entra ID</span>
+                    <span class="tag">VMware AVS</span>
+                    <span class="tag">CI/CD Pipelines</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Key Achievements</h3>
+            <div class="achievement-item">Architected enterprise-scale AKS deployment with 100% Terraform automation - zero manual steps required</div>
+            <div class="achievement-item">Deployed complete Azure migration platform supporting 47 TB database migrations with 99.9% uptime</div>
+            <div class="achievement-item">Built CompSych enterprise platform with 7 segregated resource groups serving 200,000+ users</div>
+            <div class="achievement-item">Implemented enterprise MFA solutions with Entra ID across 15+ Azure subscriptions</div>
+            <div class="achievement-item">Migrated 8,000+ VMs to Azure Update Management with zero downtime</div>
+            <div class="achievement-item">Led 20+ engineer teams across cloud operations and security</div>
+            <div class="achievement-item">Reduced deployment time by 40% with reusable Terraform modules</div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Professional Experience</h3>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">PYX Health</div>
+                    <div class="job-title">Senior Cloud Infrastructure Consultant</div>
+                    <div class="job-duration">Oct 2025 - Present</div>
+                </div>
+                <div class="subsection-title">Enterprise Infrastructure Automation & Monitoring</div>
+                <ul class="job-highlights">
+                    <li>Architected and deployed comprehensive Datadog monitoring solution across 26 Azure VMs spanning 13 subscriptions</li>
+                    <li>Built automated audit system with PowerShell generating real-time HTML reports tracking infrastructure health</li>
+                    <li>Implemented OS detection logic supporting Windows Server 2012-2025 and multiple Linux distributions</li>
+                    <li>Created automated deployment framework with Azure Run Command eliminating manual installation overhead</li>
+                    <li>Deployed Databricks monitoring integration using init scripts for automatic agent installation</li>
+                    <li>Reduced monitoring deployment time from 8 hours to 15 minutes with complete automation</li>
+                </ul>
+                <div class="subsection-title">Azure Virtual Desktop (AVD) Platform Deployment</div>
+                <ul class="job-highlights">
+                    <li>Engineered complete AVD infrastructure automation using Terraform and PowerShell for healthcare applications</li>
+                    <li>Automated session host VM deployment with custom image management and domain joining workflows</li>
+                    <li>Implemented auto-scaling policies with dynamic resource allocation based on user demand patterns</li>
+                    <li>Built comprehensive monitoring dashboards tracking user sessions, performance metrics, and capacity planning</li>
+                    <li>Created automated remediation workflows reducing IT support tickets by 60%</li>
+                    <li>Deployed multi-region AVD infrastructure supporting 500+ concurrent healthcare workers</li>
+                </ul>
+                <div class="subsection-title">Hybrid Identity & Zero Trust Security Implementation</div>
+                <ul class="job-highlights">
+                    <li>Automated Entra Connect deployment with Password Hash Sync and Seamless SSO configuration</li>
+                    <li>Implemented MFA enforcement across 15+ Azure subscriptions with automated policy deployment</li>
+                    <li>Built RBAC framework with 6 security groups following principle of least privilege</li>
+                    <li>Deployed 6 Conditional Access policies enforcing Zero Trust security architecture</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">TCS</div>
+                    <div class="job-title">Azure Architect & Lead Operations</div>
+                    <div class="job-duration">Nov 2022 - Mar 2025</div>
+                </div>
+                <div class="subsection-title">Enterprise Platform Architecture (CompSych Project)</div>
+                <ul class="job-highlights">
+                    <li>Designed and deployed complete enterprise cloud platform serving 200,000+ users with bulletproof AKS deployment</li>
+                    <li>Created 7 segregated resource groups following Azure Landing Zone best practices</li>
+                    <li>Built dual-environment infrastructure with complete isolation and 99.9% uptime SLA</li>
+                    <li>Implemented 4 production applications with custom ConfigMaps, LoadBalancer services, and auto-scaling</li>
+                    <li>Achieved 100% deployment success rate with automated retry logic and error handling</li>
+                </ul>
+                <div class="subsection-title">Azure Migration Platform Development</div>
+                <ul class="job-highlights">
+                    <li>Architected complete Azure migration environment supporting database migrations (~47 TB)</li>
+                    <li>Deployed 8 specialized resource groups with Azure Migrate, Site Recovery, Data Factory, and DMS</li>
+                    <li>Created automated assessment dashboard with real-time tracking and 156 application assessments</li>
+                    <li>Implemented SQL to Azure SQL/Managed Instance migration via DMS</li>
+                    <li>Built DevOps migration center with CI/CD pipelines and IaC automation</li>
+                </ul>
+                <div class="subsection-title">Core Infrastructure & Security</div>
+                <ul class="job-highlights">
+                    <li>Architected AKS environments with 100% Terraform, multi-node pools, and auto-scaling</li>
+                    <li>Implemented MFA with Entra ID across 15+ subscriptions</li>
+                    <li>Configured IAM with Entra ID, RBAC, conditional access, and security baselines</li>
+                    <li>Deployed enterprise features: NGINX Ingress, SSL, Azure CNI, managed identity, Key Vault</li>
+                    <li>Led VMware AVS migrations using HCX; deployed Palo Alto firewalls</li>
+                    <li>Migrated 8,000+ VMs to Azure Update Management</li>
+                    <li>Led 20+ engineers on Azure workloads, security posture, and operations</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">CVS Health</div>
+                    <div class="job-title">Azure Cloud Engineer</div>
+                    <div class="job-duration">Aug 2019 - Apr 2022</div>
+                </div>
+                <ul class="job-highlights">
+                    <li>Deployed Azure Landing Zone Accelerator using Terraform & CI/CD</li>
+                    <li>Migrated AD to Entra ID with hybrid identity setup</li>
+                    <li>Enabled ADFS & Azure AD Connect for SSO</li>
+                    <li>Implemented conditional access, MFA, and Azure Sentinel</li>
+                    <li>Built Azure Data Factory pipelines with Databricks & Event Hub</li>
+                    <li>Configured Azure Private Link, Redis Cache</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Abbott</div>
+                    <div class="job-title">Azure Cloud Architect</div>
+                    <div class="job-duration">Jun 2019 - Feb 2020</div>
+                </div>
+                <ul class="job-highlights">
+                    <li>Automated ADF workflows cutting manual processing 60%</li>
+                    <li>Built 13 complex data pipelines (split, lookup, join, aggregate)</li>
+                    <li>Integrated Azure AD auth with Workday, ADF, Power BI</li>
+                    <li>Configured Azure Firewall with Splunk logging and HIPAA compliance</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company">Previous Experience</div>
+                    <div class="job-title">Azure & Infrastructure Roles (2011-2019)</div>
+                    <div class="job-duration"></div>
+                </div>
+                <ul class="job-highlights">
+                    <li>Disney ABC | Sr. Exchange Engineer | Mar 2012-Apr 2013</li>
+                    <li>Verizon/IBM | Azure Cloud Solution Architect | Jan 2016-Jan 2018</li>
+                    <li>AIG | Cloud Architect | Oct-Dec 2015</li>
+                    <li>Entergy Corp | Azure Cloud Engineer | Oct 2014-Oct 2015</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Technical Expertise</h3>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h4>Cloud & Infrastructure</h4>
+                    <ul>
+                        <li>Azure Landing Zones</li>
+                        <li>Resource Groups & VNets</li>
+                        <li>NSGs & Private Link</li>
+                        <li>Site Recovery & Monitor</li>
+                        <li>Azure Sentinel</li>
+                        <li>Multi-Cloud (AWS, GCP)</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>Containers & Orchestration</h4>
+                    <ul>
+                        <li>AKS (Expert Level)</li>
+                        <li>Multi-node Pools</li>
+                        <li>Auto-scaling & HPA</li>
+                        <li>NGINX Ingress</li>
+                        <li>Helm Charts</li>
+                        <li>Docker Microservices</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>IaC & DevOps</h4>
+                    <ul>
+                        <li>Terraform (Expert)</li>
+                        <li>Azure DevOps</li>
+                        <li>GitHub Actions</li>
+                        <li>Jenkins CI/CD</li>
+                        <li>ARM Templates & Bicep</li>
+                        <li>PowerShell & Azure CLI</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>Security & Identity</h4>
+                    <ul>
+                        <li>Entra ID (Azure AD)</li>
+                        <li>RBAC & MFA</li>
+                        <li>Conditional Access</li>
+                        <li>OAuth 2.0 & JWT</li>
+                        <li>Defender for Cloud</li>
+                        <li>Key Vault & Policies</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>Data & Analytics</h4>
+                    <ul>
+                        <li>Azure Data Factory</li>
+                        <li>Databricks</li>
+                        <li>Azure SQL</li>
+                        <li>Cosmos DB</li>
+                        <li>Data Lake Storage</li>
+                        <li>Power BI Integration</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4>Legacy Systems</h4>
+                    <ul>
+                        <li>VMware vSphere & ESXi</li>
+                        <li>AVS & HCX</li>
+                        <li>Exchange 2007-2013</li>
+                        <li>Active Directory</li>
+                        <li>Windows Server</li>
+                        <li>vMotion, HA, DRS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Certifications</h3>
+            <div class="certs-grid">
+                <div class="cert-badge">
+                    <div class="cert-title">AZ-305: Azure Infrastructure</div>
+                    <div class="cert-expiry">Expires: Dec 24, 2026</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-title">AZ-104: Azure Administrator</div>
+                    <div class="cert-expiry">Expires: Nov 13, 2026</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-title">AZ-400: Azure DevOps</div>
+                    <div class="cert-expiry">Expires: Nov 13, 2026</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-title">AZ-500: Security Engineer</div>
+                    <div class="cert-expiry">Certified 2020</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-title">AZ-304: Architect Design</div>
+                    <div class="cert-expiry">Certified 2021</div>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-title">AZ-900: Fundamentals</div>
+                    <div class="cert-expiry">Never Expires</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">Education</h3>
+            <div class="education-box">
+                <h3>Bachelor of Information Technology</h3>
+                <p>Barrington University, Miami, FL | December 1999</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Available for immediate interviews • 15+ years enterprise experience • Ready to start within 2 weeks
         </div>
     </div>
 </body>
